@@ -134,6 +134,7 @@ void loop(){
   
   if (buttonState12 == HIGH) {    
     Serial.println("12 ON");
+    Serial.println("testCommit");
   } 
   else {
     Serial.println("12 OFF");
