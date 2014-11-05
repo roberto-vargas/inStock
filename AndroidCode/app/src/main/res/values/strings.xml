@@ -8,4 +8,17 @@
     <string name="secondary_file_key">fileKey2</string>
     <string name="title_activity_edit_tag">editTag</string>
 
+    <string name="food_item_one">First Item</string>
+    <string name="food_item_two">Second Item</string>
+    <string name="food_item_three">Third Item</string>
+    <string name="food_item_four">Fourth Item</string>
+    <string name="food_item_five">Fifth Item</string>
+    <string name="food_item_six">Sixth Item</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+
 </resources>
