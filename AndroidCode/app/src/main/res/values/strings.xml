@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">InStock</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="primary_file_key">fileKey1</string>
+    <string name="secondary_file_key">fileKey2</string>
+    <string name="title_activity_edit_tag">editTag</string>
+
+</resources>
