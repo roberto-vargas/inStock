@@ -8,33 +8,51 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.roberto.instock.editTag">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/newName"
-        android:hint="New Tag Name"
-        android:gravity="fill_horizontal"
-        />
-
+<!--
     <ImageView
         style="@style/BackGroundImageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignStart="@id/newName"
-        android:layout_alignLeft="@id/newName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        tools:ignore="ContentDescription" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="0dp"
+        tools:ignore="ContentDescription" /> -->
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23dp"
+        android:id="@+id/newName"
+        android:hint="New Tag Name"
+        android:gravity="fill_horizontal"
+        android:layout_centerVertical="true"
+        />
 
+    <TextView
+        android:layout_above="@id/newName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tagLabel"
+        android:text="Tag Name"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:layout_above="@id/newName"
+        android:layout_toRightOf="@id/newName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Days in Fridge"
+        android:textSize="22dp"/>
 
 <EditText
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:hint="New Date"
+    android:layout_marginTop="150dp"
+    android:hint="Date"
+    android:textSize="24dp"
     android:id="@+id/newDate"
     android:layout_toRightOf="@+id/newName"
+    android:layout_centerVertical="true"
     android:gravity="fill_horizontal"/>
 
 

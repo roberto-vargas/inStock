@@ -6,60 +6,111 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".mainActivity">
+    tools:context=".mainActivity"
+    android:clickable="false">
 
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="10">
 
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="0dp"
+    android:layout_height="300dp"
+    android:layout_weight="1"
+    android:weightSum="5">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/circle"
+        android:layout_weight="1"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/square"
+        android:layout_weight="1"
+        android:layout_marginTop="9dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/pentagon"
+        android:layout_weight="1"
+        android:layout_marginTop="9dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/triangle"
+        android:layout_weight="1"
+        android:layout_marginTop="9dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/hexagon"
+        android:layout_weight="1"
+        android:layout_marginTop="9dp"/>
+
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:gravity="fill_horizontal"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="7"
         android:layout_alignParentRight="false"
         android:layout_alignParentLeft="true"
-        android:id="@+id/buttonLayout">
+        android:id="@+id/buttonLayout"
+
+        >
 
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="57dp"
             android:text="one"
             android:textAlignment="viewStart"
             android:layout_gravity="start"
             android:id="@+id/zero"
             android:onClick="tag1Click"
-            />
+
+            android:background="#7e1b5af2" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="57dp"
             android:text="@string/food_item_two"
             android:id="@+id/one"
             android:onClick="tag1Click"
-            />
+
+            android:background="#ff4cba6c" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="57dp"
             android:text="@string/food_item_three"
             android:id="@+id/two"
             android:onClick="tag1Click"
-            />
+            android:background="#a4cb1b47" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="57dp"
             android:text="@string/food_item_four"
             android:id="@+id/three"
             android:onClick="tag1Click"
-            />
+            android:background="#df62c9cf" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="57dp"
             android:text="@string/food_item_five"
             android:id="@+id/four"
             android:onClick="tag1Click"
-            />
-
+            android:background="#fe9b9698" />
+<!--
         <Button
             android:layout_width="200dp"
             android:layout_height="57dp"
@@ -67,96 +118,72 @@
             android:id="@+id/five"
             android:onClick="tag1Click"
             />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="57dp"
-            android:text="Wifi Connect"
-            android:id="@+id/wifiConnect"
-            android:onClick="clientConnect"
-            />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="57dp"
-            android:text="Send '"
-            android:id="@+id/wifiSend"
-            android:onClick="wifiSend"
-            />
+-->
 
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_toRightOf="@id/buttonLayout"
+        android:layout_weight=".8"
+        android:layout_marginLeft="10dp"
         android:id="@+id/dateLayout">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:layout_gravity="start"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp"
             android:text="A"
             android:textSize="35dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="0dp"
             android:id="@+id/date_zero" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp"
             android:text="B"
             android:textSize="35dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="13dp"
             android:id="@+id/date_one" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp"
+
             android:text="C"
             android:textSize="35dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
             android:id="@+id/date_two" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp"
+
             android:text="D"
             android:textSize="35dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="13dp"
             android:id="@+id/date_three" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp"
             android:text="E"
             android:textSize="35dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="11dp"
             android:id="@+id/date_four" />
-
+<!--
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -165,23 +192,26 @@
             android:layout_marginRight="10dp"
             android:text="F"
             android:textSize="35dp"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:layout_marginTop="2dp"
             android:id="@+id/date_five" />
-</LinearLayout>
+-->
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@id/dateLayout">
+        android:layout_weight="1.2"
+        >
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -208,7 +238,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -234,7 +265,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -260,7 +292,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -286,7 +319,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -305,7 +339,7 @@
                     android:layout_gravity="clip_horizontal"
                     android:id="@+id/textView10" />
             </LinearLayout>
-
+<!--
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -329,8 +363,31 @@
                     android:text="OLD"
                     android:layout_gravity="clip_horizontal"
                     android:id="@+id/textView12" />
-            </LinearLayout>
+            </LinearLayout> -->
     </LinearLayout>
+
+</LinearLayout>
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Update"
+        android:src="@drawable/refresh_small"
+        android:id="@+id/wifiSend"
+        android:onClick="wifiSend"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:layout_width="200dp"
+        android:layout_height="57dp"
+        android:text="Wifi Connect"
+        android:id="@+id/wifiConnect"
+        android:onClick="clientConnect"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+       />
+
 
 </RelativeLayout>
 <!--

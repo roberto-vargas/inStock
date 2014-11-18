@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,6 +55,8 @@ public class mainActivity extends Activity {
             String recString = receivedBundle.getString("readMessage");
             Log.v(TAG, "recString is: " + recString);
             if(recString != ""){
+                parseWifiString(recString);
+                updateView();
                 Context context = getApplicationContext();
                 String toastString = recString;
                 CharSequence text = toastString;
@@ -480,8 +484,11 @@ public foodDatabase foodDatabase;
         }
     }
     private void updateView(){
-        // Go through the foodDatabase and update the button text fields appropriately
-        // Or go through the buttons and update their text fields using the foodDatabase
+        Context context = getApplicationContext();
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+        // Go through the buttons and update their text fields using the foodDatabase
 
         LinearLayout layout = (LinearLayout)findViewById(R.id.buttonLayout);
 
@@ -489,6 +496,12 @@ public foodDatabase foodDatabase;
             Button v = (Button) layout.getChildAt(i);
             if (v instanceof Button){
                 String name = getResources().getResourceEntryName(v.getId());
+                TextView dateView = (TextView) findViewById(R.id.date_zero);
+                TextView dateTextView = (TextView) findViewById(R.id.textView7);
+                int padding = 10;
+                int buttonWidth = width-(dateView.getWidth() + dateTextView.getWidth() - padding);
+                v.setWidth(buttonWidth);
+               // v.getBackground().setColorFilter(0xE040FB, PorterDuff.Mode.MULTIPLY);
                 if (foodDatabase.getDatabaseKeys().contains(name)) {
                     foodTag tag = foodDatabase.getTag(name);
                     CharSequence nameUpdate = tag.getID();
@@ -514,6 +527,37 @@ public foodDatabase foodDatabase;
 
                 }
             }
+        }
+        return;
+    }
+
+    private void parseWifiString(String wifiString){
+        String dateString = "";
+        int date = 0;
+        String tagNumberString = "";
+        int tagNumber = 0;
+        foodTag tag = null;
+        while (!wifiString.isEmpty()){
+            if (wifiString.charAt(0) == 'H') return;
+            if (wifiString.charAt(0) == ';'){
+                tagNumberString = tagNumberString.substring(1);
+                tagNumber = Integer.parseInt(tagNumberString);
+                tag = foodDatabase.getTag(NUMBERS[tagNumber]);
+                tag.setDate(date/10);
+                dateString = "";
+                tagNumberString = "";
+            }
+            if (wifiString.charAt(0) == ':'){
+                if(dateString.charAt(0) == ';'){
+                    date = Integer.parseInt(dateString.substring(1));
+                } else{
+                    date = Integer.parseInt(dateString);
+                }
+                tagNumberString = "";
+            }
+            tagNumberString = tagNumberString + wifiString.substring(0,1);
+            dateString = dateString + wifiString.substring(0,1);
+            wifiString = wifiString.substring(1);
         }
         return;
     }
